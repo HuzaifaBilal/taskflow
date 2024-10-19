@@ -1,0 +1,19 @@
+button {
+  img {
+    width: 1em;
+  }
+}
+
+:host {
+  text-align: center;
+}
+
+.logout {
+  padding-top: 5em;
+}
+.btn-login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
