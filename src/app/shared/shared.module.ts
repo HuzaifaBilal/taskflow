@@ -13,9 +13,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ShellComponent } from './shell/shell.component';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
 
 @NgModule({
-  declarations: [ShellComponent],
+  declarations: [ShellComponent, DeleteButtonComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -47,6 +48,7 @@ import { ShellComponent } from './shell/shell.component';
     MatInputModule,
     MatSnackBarModule,
     ShellComponent,
+    DeleteButtonComponent,
   ],
 })
 export class SharedModule {}

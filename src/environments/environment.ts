@@ -1,4 +1,11 @@
-export const environment = {
+import { FirebaseOptions } from '@angular/fire/app';
+
+export interface EnvironmentConfig {
+  production: boolean;
+  firebase: FirebaseOptions;
+}
+
+export const environment: EnvironmentConfig = {
   production: true,
   firebase: {
     apiKey: 'AIzaSyDL32WF5QzgFnjCggZDmJkHneiUPWUd4hI',

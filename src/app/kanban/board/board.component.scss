@@ -1,0 +1,74 @@
+.outer-card {
+  margin: 10px;
+  min-width: 300px;
+  min-height: 400px;
+  max-width: 300px;
+  padding: 1.25rem;
+  mat-card-title {
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+  mat-card-subtitle {
+    font-size: 13px;
+  }
+}
+
+.inner-card {
+  margin: 15px 0;
+  cursor: pointer;
+  mat-card {
+    padding: 15px;
+  }
+}
+
+.cdk-drag-animating {
+  transition: transform 300ms ease;
+}
+
+.tasks.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 300ms ease;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+.blue {
+  background: #71deff;
+  color: black;
+}
+.green {
+  background: #36e9b6;
+  color: black;
+}
+.yellow {
+  background: #ffcf44;
+  color: black;
+}
+.purple {
+  background: #b15cff;
+}
+.red {
+  background: #e74a4a;
+}
+
+.gray {
+  background: gray;
+  text-decoration: line-through;
+}
+.board-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: auto;
+}
+.board-actions button {
+  position: relative;
+  .mat-icon {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
