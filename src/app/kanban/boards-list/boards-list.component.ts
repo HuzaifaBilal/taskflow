@@ -22,6 +22,11 @@ export class BoardsListComponent implements OnInit, OnDestroy {
       .getUserBoards()
       .subscribe((boards) => (this.boards = boards));
   }
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.boards, event.previousIndex, event.currentIndex);
@@ -42,9 +47,5 @@ export class BoardsListComponent implements OnInit, OnDestroy {
         });
       }
     });
-  }
-
-  ngOnDestroy() {
-    this.sub?.unsubscribe();
   }
 }
