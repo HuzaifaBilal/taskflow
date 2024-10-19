@@ -39,34 +39,6 @@ export class BoardService {
     }
   }
 
-  /**
-   * Get all boards owned by the current user
-   */
-  // getUserBoards(): Observable<Board[]> {
-  //   return new Observable<Board[]>((observer) => {
-  //     this.userBoardHandler(observer);
-  //   });
-  // }
-  // async userBoardHandler(observer: Subscriber<Board[]>) {
-
-  //   const user = this.auth.currentUser;
-  //   if (user) {
-  //     const boardsRef = query(
-  //       collection(this.firestore, 'boards'),
-  //       where('uid', '==', user.uid),
-  //       orderBy('priority')
-  //     );
-  //     const boardsSnapshot = await getDocs(boardsRef);
-  //     const boards = boardsSnapshot.docs.map((doc) => ({
-  //       id: doc.id,
-  //       ...doc.data(),
-  //     })) as Board[];
-  //     observer.next(boards);
-  //   } else {
-  //     observer.next([]);
-  //   }
-  // }
-
   getUserBoards(): Observable<Board[]> {
     return new Observable<Board[]>((observer) => {
       const unsubscribeAuth = onAuthStateChanged(this.auth, (user) => {
@@ -85,18 +57,17 @@ export class BoardService {
                 id: doc.id,
                 ...doc.data(),
               })) as Board[];
-              observer.next(boards); // Emit the updated boards array
+              observer.next(boards);
             }
           );
 
-          // Clean up both the auth and snapshot listeners
           return () => {
             unsubscribeSnapshot();
             unsubscribeAuth();
           };
         } else {
-          observer.next([]); // Return empty array when no user is logged in
-          return () => unsubscribeAuth(); // Still return an unsubscribe function
+          observer.next([]);
+          return () => unsubscribeAuth();
         }
       });
     });
