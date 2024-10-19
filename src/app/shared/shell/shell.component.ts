@@ -14,7 +14,6 @@ export class ShellComponent {
   isDarkTheme = false;
   changeTheme() {
     const html = document.querySelector('html');
-    console.log(html);
     this.isDarkTheme = !this.isDarkTheme;
     if (html) {
       if (this.isDarkTheme) {
