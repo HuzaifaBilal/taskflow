@@ -4,7 +4,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
 } from '@angular/router';
-import { Auth, getAuth, onAuthStateChanged } from '@angular/fire/auth'; // Import from modular Firebase SDK
+import { Auth } from '@angular/fire/auth'; // Import from modular Firebase SDK
 import { SnackService } from '../services/snack.service';
 
 @Injectable({
