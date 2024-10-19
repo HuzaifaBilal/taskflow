@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ShellComponent } from './shell/shell.component';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [ShellComponent, DeleteButtonComponent],
   imports: [
@@ -32,6 +32,7 @@ import { DeleteButtonComponent } from './delete-button/delete-button.component';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    MatSlideToggleModule,
   ],
   exports: [
     RouterModule,

@@ -11,7 +11,21 @@ import { Auth, authState } from '@angular/fire/auth';
 export class ShellComponent {
   isHandset$: Observable<boolean> | undefined;
   authState$: Observable<any>;
-
+  isDarkTheme = false;
+  changeTheme() {
+    const html = document.querySelector('html');
+    console.log(html);
+    this.isDarkTheme = !this.isDarkTheme;
+    if (html) {
+      if (this.isDarkTheme) {
+        html.classList.add('dark-theme');
+        html.classList.remove('light-theme');
+      } else {
+        html.classList.remove('dark-theme');
+        html.classList.add('light-theme');
+      }
+    }
+  }
   constructor(
     private breakpointObserver: BreakpointObserver,
     private auth: Auth
@@ -25,5 +39,8 @@ export class ShellComponent {
         map((result) => result.matches),
         shareReplay()
       );
+  }
+  ngAfterViewInit() {
+    this.changeTheme();
   }
 }

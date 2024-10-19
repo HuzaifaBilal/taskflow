@@ -30,6 +30,10 @@
       <span class="logo" routerLink="/">🔥 TaskFlow</span>
 
       <span class="fill-space"></span>
+      <mat-slide-toggle
+        [checked]="isDarkTheme"
+        (change)="changeTheme()"
+      ></mat-slide-toggle>
       <div *ngIf="!(isHandset$ | async)">
         <a mat-button routerLink="/kanban">🍱 Kanban </a>
 
@@ -37,11 +41,13 @@
           >🔑 Login</a
         >
         <a mat-button routerLink="/login" *ngIf="authState$ | async as user">
-          <img
-            class="avatar"
-            [src]="user.photoURL || 'assets/default-user.svg'"
-          />
-          Profile
+          <div class="user-profile">
+            <img
+              class="avatar"
+              [src]="user.photoURL || 'assets/default-user.svg'"
+            />
+            <span>Profile</span>
+          </div>
         </a>
       </div>
 
