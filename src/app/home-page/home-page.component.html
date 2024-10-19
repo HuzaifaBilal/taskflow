@@ -15,7 +15,11 @@
     </div>
 
     <div class="cta">
-      <button mat-stroked-button routerLink="/login" color="primary">
+      <button
+        mat-stroked-button
+        [routerLink]="auth.currentUser ? '/kanban' : '/login'"
+        color="primary"
+      >
         Try out!
       </button>
     </div>
