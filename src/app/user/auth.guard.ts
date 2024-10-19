@@ -24,7 +24,6 @@ export class AuthGuard implements CanActivate {
       const user = this.auth.currentUser;
 
       const isLoggedIn = !!user;
-      console.log(isLoggedIn);
       if (!isLoggedIn) {
         this.snack.authError();
       }
