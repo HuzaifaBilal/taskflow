@@ -8,16 +8,16 @@ import { Component } from '@angular/core';
 export class HomePageComponent {
   features = [
     {
-      title: 'Collaborative Tasks',
-      description: 'Work together with your team in real-time.',
+      title: 'Task management',
+      description: 'Create multiple boards.',
     },
     {
-      title: 'Time Tracking',
-      description: 'Keep track of time spent on tasks and projects.',
+      title: 'Prioritize',
+      description: 'Prioritize tasks.',
     },
     {
-      title: 'Analytics',
-      description: 'Get insights into your workflow efficiency.',
+      title: 'Grow',
+      description: 'Helps with workflow efficiency.',
     },
   ];
 }
